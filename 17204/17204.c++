@@ -17,7 +17,7 @@ int main() {
 	for (int i = 0; i < n; i++) {
 		cin >> visited[i];
 	}
-	//int j;
+	//int j;11
 	for (int j = 0; j < n; j++) {
 		int t;
 		t = visited[p];
@@ -31,4 +31,4 @@ int main() {
 	printf("-1");
 	
 
-}
+} //game of dead~
