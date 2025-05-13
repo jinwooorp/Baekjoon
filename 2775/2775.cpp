@@ -9,7 +9,7 @@ int main() {
 
     int t; cin >> t;
 
-    for (int i = 0; i < 15; i++){
+    for (int i = 1; i <=15; i++){
         dp[0][i] = i;
         dp[i][1] = 1;
     }
