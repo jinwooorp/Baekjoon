@@ -1,28 +1,35 @@
 #include <iostream>
-#include <map>
+#include <algorithm>
 #include <string>
 using namespace std;
 
 int main() {
+    
+    int n; cin >> n;
+    cin.ignore();
+    while (n--){
 
-    string p = "abcdefghijklmnopqrstuvwxyz";
-    string c = "wghuvijxpqrstacdebfklmnoyz";
+        string s; getline(cin,s);
+        
+        int cnt[26];
+        fill(cnt, cnt + 26, 0);
 
-    // map<char, char> mcc;
+        for (char c : s){
+            if (c == ' ') continue; 
+            cnt[c-'a']++;
+        }
+        int mx = *max_element(cnt,cnt+26);
 
-    // for (int i = 0; i < 26; ++i) {
-    //     mcc[c[i]] = p[i];
-    // }
-    // cin.ignore();
-    // string s; getline(cin,s);
-    // int freq[26] = {0,};
-    // for (int i = 0; i < s.length(); i++){
-    //     if (s[i] != ' '){
-    //         freq[mcc[s[i]]-'a']++;
-    //     }
-    // }
-    for (int i = 0; i < 26; i++) {
-    if (freq[i] > 0)
-        cout << char('a' + i) << ": " << freq[i] << '\n';
+        int ct = 0;
+        char c;
+        for (int i = 0; i < 26; i++){
+            if (cnt[i] == mx){
+                ct++;
+                c =  'a' + i;
+            }
+        }
+
+        if (ct > 1) cout << "?" << '\n';
+        else cout << c << '\n';
     }
 }
