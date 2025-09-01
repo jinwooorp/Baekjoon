@@ -1,29 +1,28 @@
 #include <iostream>
-#include <algorithm>
 #include <vector>
+#include <algorithm>
+
 using namespace std;
 
-int main () {
+int main() {
 
-    int h , w;
-    cin >> h >> w;
-
-    vector<int> vi(w);
-
+    int h,w; cin >> h >> w;
+    vector<int> v(w);
     for (int i = 0; i < w; i++){
-        cin >> vi[i];
+        cin >> v[i];
     }
 
     int ans = 0;
 
     for (int i = 1; i < w-1; i++){
-        int left = *max_element(vi.begin(),vi.begin()+i);
-        int right = *max_element(vi.begin()+i+1,vi.end());
-        
-        int water = min(left,right) - vi[i];
-        if (water > 0){
-            ans += water;
+        int l = *max_element(v.begin(),v.begin()+i);
+        int r = *max_element(v.begin()+i+1,v.end());
+
+        int d = min(l,r) - v[i];
+        if (d > 0) {
+            ans += d;
         }
     }
     cout << ans;
+    
 }
