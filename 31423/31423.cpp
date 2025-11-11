@@ -9,8 +9,7 @@ void dfs(int node) {
     cout << words[node];
     for (auto k : fld[node]){
         dfs(k);
-    }
-    
+    } 
 }
 
 int main() {
